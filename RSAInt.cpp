@@ -171,3 +171,13 @@ void RSAInt::divmod(RSAInt *d, RSAInt *q, RSAInt *r)
         }
     }
 }
+
+void RSAInt::BigVal(std::uint8_t* new_number, const std::uint32_t size)
+{
+    assert(size <= myBYTES);
+    
+    for (std::uint32_t i = 0; i < (myBYTES<<1); i++)
+        this->number[i] = 0;
+    for (std::uint32_t i = 0; i < size; i++)
+        this->number[i] = new_number[i];
+}

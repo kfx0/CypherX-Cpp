@@ -2,16 +2,17 @@
 #define RSAINT_H
 
 #include <iostream>
+#include <cassert>
 
 #define myBYTES 17
 
 class RSAInt
 {
 public:
-    std::uint8_t number[2*myBYTES];
-
+    std::uint8_t number[myBYTES<<1];
     void ShiftLeft(void);
     void EZVal(std::uint8_t);
+    void BigVal(std::uint8_t*, const std::uint32_t);
     void sum(RSAInt *);
     void mul(RSAInt *);
     void sub(RSAInt *);
