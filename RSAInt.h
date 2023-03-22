@@ -1,3 +1,6 @@
+#ifndef RSAINT_H
+#define RSAINT_H
+
 #include <iostream>
 
 #define myBYTES 17
@@ -26,3 +29,5 @@ public:
     &RSAInt operator+(RSAInt,RSAInt);
 >>>>>>> f169079 (new commit)
 };
+
+#endif
