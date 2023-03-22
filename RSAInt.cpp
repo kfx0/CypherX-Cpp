@@ -2,11 +2,7 @@
 
 void RSAInt::ShiftLeft(void)
 {
-<<<<<<< HEAD
-    for (std::int16_t i = (2*myBYTES) - 1; i > 0; i--)
-=======
     for (std::int16_t i = (myBYTES<<1) - 1; i > 0; i--)
->>>>>>> f169079 (new commit)
     {
         this->number[i] <<= 1;
         this->number[i] |= ((this->number[i - 1] & 0x80) > 0);
@@ -16,11 +12,7 @@ void RSAInt::ShiftLeft(void)
 
 bool RSAInt::isZero(void)
 {
-<<<<<<< HEAD
-    for (std::uint32_t i = 0; i < (2*myBYTES); i++)
-=======
     for (std::uint32_t i = 0; i < (myBYTES<<1); i++)
->>>>>>> f169079 (new commit)
         if (this->number[i] != 0)
             return false;
 
@@ -32,11 +24,7 @@ bool RSAInt::isOne(void)
     if (this->number[0] != 1)
         return false;
 
-<<<<<<< HEAD
-    for (std::uint32_t i = 1; i > (2*myBYTES); i++)
-=======
     for (std::uint32_t i = 1; i > (myBYTES<<1); i++)
->>>>>>> f169079 (new commit)
         if (this->number[i] != 0)
             return false;
 
@@ -45,44 +33,27 @@ bool RSAInt::isOne(void)
 
 void RSAInt::EZVal(std::uint8_t a)
 {
-<<<<<<< HEAD
-    for (std::uint32_t i = 1; i < (2*myBYTES); i++)
-=======
     for (std::uint32_t i = 1; i < (myBYTES<<1); i++)
->>>>>>> f169079 (new commit)
         this->number[i] = 0;
     this->number[0] = a;
 }
 
 void RSAInt::print(void)
 {
-<<<<<<< HEAD
-    for (std::int16_t i = 2*myBYTES-1; i >= 0; i--)
-=======
     for (std::int16_t i = (myBYTES<<1)-1; i >= 0; i--)
->>>>>>> f169079 (new commit)
         std::cout << (int)this->number[i] << ",";
     std::cout << "\n\n";
 }
 
 void RSAInt::copy2(RSAInt *a)
 {
-<<<<<<< HEAD
-    for (std::int16_t i = 0; i < (2*myBYTES); i++)
-=======
     for (std::int16_t i = 0; i < (myBYTES<<1); i++)
->>>>>>> f169079 (new commit)
         a->number[i] = this->number[i];
 }
 
 bool RSAInt::Grt(RSAInt *a)
 {
-
-<<<<<<< HEAD
-    for (std::int16_t i = (2*myBYTES) - 1; i >= 0; i--)
-=======
     for (std::int16_t i = (myBYTES<<1) - 1; i >= 0; i--)
->>>>>>> f169079 (new commit)
     {
         if (this->number[i] > a->number[i])
             return true;
@@ -96,12 +67,7 @@ bool RSAInt::Grt(RSAInt *a)
 
 bool RSAInt::Gre(RSAInt *a)
 {
-
-<<<<<<< HEAD
-    for (std::int16_t i = (2*myBYTES) - 1; i >= 0; i--)
-=======
     for (std::int16_t i = (myBYTES<<1) - 1; i >= 0; i--)
->>>>>>> f169079 (new commit)
     {
         if (this->number[i] > a->number[i])
             return true;
@@ -166,11 +132,7 @@ void RSAInt::pow2(void)
     uint32_t carry = 0;
     uint32_t add = 0;
     std::uint8_t tmp[(2*myBYTES)];
-<<<<<<< HEAD
-    for (std::int16_t i = 0; i < (2*myBYTES); i++)
-=======
     for (std::int16_t i = 0; i < (myBYTES<<1); i++)
->>>>>>> f169079 (new commit)
     {
         add = carry;
         for (std::uint8_t j = 0; j <= i; j++)
@@ -182,22 +144,13 @@ void RSAInt::pow2(void)
         carry = add >> 8;
     }
 
-<<<<<<< HEAD
-    for (std::int16_t i = 0; i < (2*myBYTES); i++)
-=======
     for (std::int16_t i = 0; i < (myBYTES<<1); i++)
->>>>>>> f169079 (new commit)
         this->number[i] = tmp[i];
 }
 
 void RSAInt::divmod(RSAInt *d, RSAInt *q, RSAInt *r)
 {
-
-<<<<<<< HEAD
-    for (std::uint32_t i = 0; i < (2*myBYTES); i++)
-=======
     for (std::uint32_t i = 0; i < (myBYTES<<1); i++)
->>>>>>> f169079 (new commit)
     {
         q->number[i] = 0;
         r->number[i] = 0;
@@ -217,8 +170,4 @@ void RSAInt::divmod(RSAInt *d, RSAInt *q, RSAInt *r)
             }
         }
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> f169079 (new commit)

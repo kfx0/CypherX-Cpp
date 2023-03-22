@@ -1,6 +1,9 @@
+#ifndef RSACRYPT_H
+#define RSACRYPT_H
+
 #include <time.h>
 #include <cstdlib>
-#include "RSAInt.cpp"
+#include "RSAInt.h"
 
 typedef struct Key
 {
@@ -21,3 +24,5 @@ public:
     void MakeKey();
     RSAInt cryptor(Key, RSAInt);
 };
+
+#endif

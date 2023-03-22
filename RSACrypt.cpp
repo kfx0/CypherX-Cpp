@@ -19,7 +19,7 @@ RSAInt RSA::make_prime()
         pm1.number[0] &= ~0x01;
 
         flag = true;
-        for (uint32_t i = 0; i < 30 & flag; i++)
+        for (uint32_t i = 0; (i < 30) & flag; i++)
         {
             a.EZVal(primes[i]);
             b.EZVal(1);
