@@ -20,4 +20,9 @@ public:
     void print(void);
     bool isZero(void);
     bool isOne(void);
+<<<<<<< HEAD
+=======
+    
+    &RSAInt operator+(RSAInt,RSAInt);
+>>>>>>> f169079 (new commit)
 };
